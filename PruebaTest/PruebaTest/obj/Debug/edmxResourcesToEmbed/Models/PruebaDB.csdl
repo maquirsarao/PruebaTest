@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Boolean" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Estado__Estado" FromRole="Estado" ToRole="Usuario" />
+    <NavigationProperty Name="Usuarios1" Relationship="Self.FK_Usuario_Estado__EstadoNacimiento" FromRole="Estado" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sexo" Type="Boolean" Nullable="false" />
+    <Property Name="EstadoNacimiento" Type="Int32" Nullable="false" />
+    <Property Name="Telefono" Type="Int64" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Municipio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Colonia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CalleNumero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <Property Name="CURP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_Usuario_Estado__Estado" FromRole="Usuario" ToRole="Estado" />
+    <NavigationProperty Name="Estado2" Relationship="Self.FK_Usuario_Estado__EstadoNacimiento" FromRole="Usuario" ToRole="Estado" />
+  </EntityType>
+  <Association Name="FK_Usuario_Estado__Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Estado__EstadoNacimiento">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="EstadoNacimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PruebaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Estadoes" EntityType="Self.Estado" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Usuario_Estado__Estado" Association="Self.FK_Usuario_Estado__Estado">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Estado__EstadoNacimiento" Association="Self.FK_Usuario_Estado__EstadoNacimiento">
+      <End Role="Estado" EntitySet="Estadoes" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
