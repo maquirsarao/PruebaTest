@@ -1,0 +1,14 @@
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\PruebaTest.exe.config
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\PruebaTest.exe
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\PruebaTest.pdb
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\EntityFramework.dll
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\EntityFramework.xml
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.Properties.Resources.resources
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.csproj.GenerateResource.Cache
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.exe
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.pdb
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.FrmUsuarioMenu.resources
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.FrmUsuarioNuevo.resources
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\obj\Debug\PruebaTest.csprojResolveAssemblyReference.cache
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\Critza.Bibliotecas.dll
+C:\AndroidProject\PruebaTest\PruebaTest\PruebaTest\bin\Debug\CurpValidator.dll
